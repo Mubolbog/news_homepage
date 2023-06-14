@@ -1,0 +1,249 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: myfont;
+    src: url("Inter,Space_Mono/inter/Inter-VariableFont_slnt,wght.ttf");
+}
+body{
+    max-width: 1100px;
+    font-family: myfont;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+div.transover{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    opacity: 0.6;
+    left: 0;
+    pointer-events: none;
+}
+.header nav.open{
+    background-color: white;  
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    width: 75vw;
+    padding: 1.25rem;
+    z-index: 6;
+ }
+img{
+    max-width: 100%;
+    width:100%;
+}
+html {
+    font-size: 15px;
+}
+ul{
+    list-style-type: none;
+}
+p{
+    line-height: 1.8;
+    color: hsl(236, 13%, 42%);
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background: transparent;
+}
+
+ .header nav ul{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header nav ul li{
+    margin: 1.5rem 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+.header nav ul li:hover{
+    color:hsl(5, 85%, 63%) ;
+}
+.header nav{
+    opacity: 0;
+    z-index: -99999;
+    transition: all o.3s ease-in-out;
+}
+
+
+.header .menu-button button{
+    background: transparent;
+    outline:none;
+    border: none;
+    cursor: pointer;
+}
+.header nav #menu-close{
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 99999;
+    cursor: pointer;
+}
+
+.showcase{
+    padding: 1.25rem;
+    padding-top: 0;
+}
+
+.showcase h1{
+    font-size: 2rem;
+    font-weight: 800;
+    color:hsl(240, 100%, 5%);
+    margin: 1rem 0;
+}
+.showcase div:first-child article p {
+    margin-bottom: 1rem;
+}
+
+.showcase div:first-child article button{
+    padding: 1rem 2rem;
+    color: #fff;
+    background-color:hsl(5, 85%, 63%) ;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: all 0.3s ease-in-out;
+}
+.showcase > div:last-child {
+    background-color:hsl(240, 100%, 5%) ;
+    margin-top: 2rem;
+    padding: 1.2rem;
+}
+.showcase > div:last-child h2{
+    margin-left: 17px;
+    color:hsl(35, 77%, 62%) ;
+}
+.showcase > div:last-child article{
+    padding: 1.25rem 1.25rem 0;
+}
+.showcase > div:last-child h3{
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.showcase > div:last-child h3:hover{
+    color:hsl(35, 77%, 62%) ;
+    cursor: pointer;
+}
+.showcase div:first-child article button:hover{
+    background-color:hsl(240, 100%, 5%) ;
+    cursor: pointer;
+}
+.showcase > div:last-child article:not(:last-child) {
+    border-bottom:1px solid hsl(236, 13%, 42%) ;
+}
+
+.cards{
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.7rem;
+}
+.cards article{
+    display: flex;
+    gap: 1.25em;
+}
+.cards article img{
+    width: 150px;
+}
+
+.cards article span{
+   color:hsl(236, 13%, 42%) ;
+   font-weight: bold;
+   font-size: 2rem;
+   opacity: 75%; 
+}
+
+.cards article h4 {
+    font-size: 1.25rem ;
+    color: hsl(240, 100%, 5%);
+    margin: 1rem 0;
+}
+
+@media(min-width: 1024px) {
+    .header{
+        padding: 2rem 1.5rem;
+    }
+    .header nav{
+        width: 100%;
+        opacity: 1;
+        z-index: auto;
+    }
+    .header nav.open{
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+    }
+    .header nav #menu-close {
+        display: none;
+    }
+    .header nav ul{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        top: 0;
+        transform: translateY(0%);
+    }
+    div.transover{
+        display: none;
+    }
+    .header nav ul li{
+        margin: 0;
+    }
+   .header .menu-button button{
+        display: none;
+    }
+    .showcase{
+        display: flex;
+        gap: 2rem;
+    }
+    .showcase h1{
+        font-size: 3rem;
+    }
+    .showcase > div:first-child article{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        place-items: center;
+        margin-top: 2rem;
+    }
+    .showcase > div:last-child{
+        margin-top: 0;
+    }
+
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+ }
+
+ @media(min-width: 768) {
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 2rem;
+
+}
+ }
+
